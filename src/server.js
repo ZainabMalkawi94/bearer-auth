@@ -23,6 +23,14 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use(authRoutes);
 
+
+
+app.get('/', welcomeHandler);
+function welcomeHandler(req, res) {
+    res.status(200).send('hi');
+}
+
+
 function startup(port) {
   app.listen(port, () => {
       console.log(`server is up and listen on ${port}`)
